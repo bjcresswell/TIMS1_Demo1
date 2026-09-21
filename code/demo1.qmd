@@ -1,0 +1,61 @@
+---
+title: "Penguin data visualisation"
+author: "Ben Cresswell"
+date: today
+format: html
+editor: visual
+execute:
+  echo: false
+  warning: true
+  message: true
+---
+
+# Load packages
+```{r}
+## install.packages("tidyverse") # Never hard code this in your scripts, only run once to install
+library(tidyverse)
+```
+
+
+# Load data
+Will use a source file to do this (show file briefly)
+
+## Need to use correct file name/path
+```{r}
+# Incorrect
+source("demo.R")
+```
+
+## Can use full path to file (if you want but bad practice!!!)
+```{r}
+source("/Users/jc504838/Science/Data & analysis/Teaching/MB5370 Techniques 1/ClassRepos/TIMS1_Demo1/code/demo1.R")
+```
+
+## Could set wd but also bad practice!!
+
+WHY??
+```{r}
+setwd("/Users/jc504838/Science/Data & analysis/Teaching/MB5370 Techniques 1/ClassRepos/TIMS1_Demo1")
+getwd()
+```
+
+## Best is to work in R projects and use relative file paths
+```{r}
+source("demo1.r")
+```
+
+
+# Prove we have a working dataset loaded by plotting!
+```{r}
+penguins |> 
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, colour = species)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_minimal()
+```
+
+
+
+# Let's close this project and re-open the Qmd - what will happen?!?
+
+
