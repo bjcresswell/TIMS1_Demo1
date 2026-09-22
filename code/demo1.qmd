@@ -14,6 +14,8 @@ execute:
 ```{r}
 ## install.packages("tidyverse") # Never hard code this in your scripts, only run once to install
 library(tidyverse)
+
+stats::filter()
 ```
 
 
